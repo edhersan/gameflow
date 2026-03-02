@@ -51,7 +51,8 @@ class VentanaPrincipal:
             lbl = tk.Label(
                 self.frame_lista,
                 text=juego.nombre,
-                fg="white",
+                font=("Consolas", 24, "italic"),
+                fg="red",
                 bg="#222222",
                 anchor="w"
             )
