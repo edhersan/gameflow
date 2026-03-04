@@ -1,7 +1,7 @@
 import os
 import requests
 
-from fastapi import FastAPI, HTTPException, requests
+from fastapi import FastAPI, HTTPException
 from database import inicializar_bd, obtener_conexion
 from models import JuegoIn, JuegoOut
 from config import asegurar_estructura, CARATULAS_DIR
@@ -121,6 +121,7 @@ def eliminar_juego(id_juego: int):
 def descargar_caratula_auto(id_juego: int):
     conn = obtener_conexion()
     cur = conn.cursor()
+
 # Primero verificamos si el juego existe
     cur.execute("SELECT * FROM juegos WHERE id = ?", (id_juego,))
     fila = cur.fetchone()
@@ -129,20 +130,28 @@ def descargar_caratula_auto(id_juego: int):
         raise HTTPException(status_code=404, detail="Juego no encontrado")
     
     titulo = fila["nombre"]
+
     url_imagen = buscar_caratula_por_titulo(titulo)
     if not url_imagen:
         conn.close()
         raise HTTPException(status_code=404, detail="No se encontró una carátula para este juego")
-    resp = requests.get(url_imagen, timeout=15)
+    try:
+        resp = requests.get(url_imagen, timeout=15)
+    except requests.RequestException:
+        conn.close()
+        raise HTTPException(status_code=502, detail="Error al conectar con RAWG") 
     if resp.status_code != 200:
         conn.close()
         raise HTTPException(status_code=502, detail="Error al descargar  la carátula") 
+    
     os.makedirs(CARATULAS_DIR, exist_ok=True)
+
     nombre_archivo = f"{id_juego}.jpg"
     ruta_archivo = os.path.join(CARATULAS_DIR, nombre_archivo)
     with open(ruta_archivo, "wb") as f:
          f.write(resp.content)
-    ruta_guardada = ruta_archivo
+
+    ruta_guardada = f"/caratulas/{nombre_archivo}"
     cur.execute("UPDATE juegos SET caratula = ? WHERE id = ?", (ruta_guardada, id_juego))
     conn.commit()
     conn.close()
