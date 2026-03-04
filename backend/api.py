@@ -151,7 +151,7 @@ def descargar_caratula_auto(id_juego: int):
     with open(ruta_archivo, "wb") as f:
          f.write(resp.content)
 
-    ruta_guardada = f"/caratulas/{nombre_archivo}"
+    ruta_guardada = os.path.join(CARATULAS_DIR, nombre_archivo)
     cur.execute("UPDATE juegos SET caratula = ? WHERE id = ?", (ruta_guardada, id_juego))
     conn.commit()
     conn.close()

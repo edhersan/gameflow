@@ -2,7 +2,7 @@ import requests
 import urllib.parse
 import os
 
-RAW_API_KEY = "AQUI_VA_TU_API_KEY_DE_RAWG"  # Reemplaza esto con tu propia API key de RAWG
+RAW_API_KEY = "AQUI LA APIKEY"  # Reemplaza esto con tu propia API key de RAWG
 RAW_ENDPOINT = "https://api.rawg.io/api/games"
 
 
