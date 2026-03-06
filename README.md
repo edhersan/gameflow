@@ -86,7 +86,7 @@ Animaciones y transiciones para UI (solo si se cambia de framework)
 
 🛠️ Instalación y ejecución
 1. Clonar repositorio
-Pythongit clone https://github.com/tuusuario/gameflow.gitcd gameflowMostrar más líneas
+Pythongit clone https://github.com/edhersan/gameflow.gitcd gameflowMostrar más líneas
 2. Instalar dependencias
 Shellpip install -r requirements.txtMostrar más líneas
 3. Iniciar backend
