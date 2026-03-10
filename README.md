@@ -53,6 +53,13 @@ Para correr el proyecto manualmente, sigue estos pasos en tu terminal:
 
 ## 📸 Capturas de Pantalla
 
+| | |
+| :---: | :---: |
+| ![GameFlow](./screenshots/Captura%20de%20pantalla%202026-03-08%20162606.png) | ![GameFlow](./screenshots/Captura%20de%20pantalla%202026-03-08%20162848.jpg) |
+| ![GameFlow](./screenshots/Captura%20de%20pantalla%202026-03-08%20162946.jpg) | ![GameFlow](./screenshots/Captura%20de%20pantalla%202026-03-08%20163209.jpg) |
+| ![GameFlow](./screenshots/Captura%20de%20pantalla%202026-03-10%20155237.jpg) | ![GameFlow](./screenshots/Captura%20de%20pantalla_20260310_160939.png) |
+| ![GameFlow](./screenshots/Captura%20de%20pantalla_20260310_161050.png) | |
+
 
 ---
 
