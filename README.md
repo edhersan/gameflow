@@ -1,6 +1,7 @@
 # 🎮 GameFlow — Tu Biblioteca de Juegos Personal
 
-**GameFlow** es una aplicación de escritorio desarrollada en Python que permite administrar tu biblioteca de videojuegos con una interfaz moderna, oscura y minimalista. Gestiona toda tu colección desde un solo lugar con descarga automática de metadatos y carátulas.
+**GameFlow** es una aplicación de escritorio hecha en Python que te permite administrar tu biblioteca de videojuegos con una interfaz moderna, oscura y pensada para ser simple y útil.
+Incluye desde un CRUD completo hasta descarga automática de carátulas gracias a la API de RAWG.
 
 ---
 
@@ -24,10 +25,11 @@
 ## 🛠️ Instalación y Ejecución
 
 ### 🪟 Windows
-1. Descarga el instalador [GameFlow.exe aquí](https://github.com/edhersan/gameflow/releases/latest/download/GameFlow.exe).
+1. Descarga el instalador en Releases.
 2. Ejecuta el archivo e instálalo en tu sistema.
 
 ### 🐧 Debian / Ubuntu
+Descarga el instalador en Releases.
 Para instalar el paquete .deb, utiliza los comandos:
 **sudo dpkg -i gameflow.deb**
 **sudo apt --fix-broken install**
